@@ -2,34 +2,39 @@
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
-
+	//width: 100%;
+	font-family: 'lato-bold';
+	
 	ul {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-
+		
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: 1.5em;
-			left: -999em;
+			display: none;
 			z-index: 99999;
-
+			background-color: #f7f9fc;
 			ul {
-				left: -999em;
+				display: none;
 				top: 0;
 			}
 
 			li {
+				border-bottom: 1px solid #bdb8b8;
+				padding: 15px;
+				width: 150px;
 				&:hover > ul {
+					display: block;
 					left: 100%;
 				}
 			}
 
 			a {
-				width: 200px;
+				// width: 100px;
 			}
 
 			:hover > a {
@@ -38,19 +43,26 @@
 			a:hover {
 			}
 		}
-
-		li:hover > ul {
-			left: auto;
+		li{
+			&:hover>ul{
+				display: block;
+				left: auto;
+			}
 		}
 	}
 	li {
+		padding: 0 15px;
 		float: left;
 		position: relative;
-
 		&:hover > a {
+			text-decoration: none;
+			color: purple;
 		}
 	}
 	a {
+		color: #333333;
+		text-transform: uppercase;
+		font-size: 16px;
 		display: block;
 		text-decoration: none;
 	}
