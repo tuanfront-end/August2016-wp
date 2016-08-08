@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package eden
+ * @package _s
  */
 
 if ( ! function_exists( 'eden_setup' ) ) :
@@ -42,6 +42,16 @@ function eden_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+
+	// Add Post format for THeme
+	add_theme_support('post-formats', array(
+		'link',
+		'aside',
+		'gallery',
+		'video',
+		'image',
+		'quote'
+	) );
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'eden' ),
@@ -79,7 +89,7 @@ function eden_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'eden_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'eden_content_width', 0 );
-
+ 
 /**
  * Register widget area.
  *

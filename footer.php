@@ -9,9 +9,10 @@
  * @package eden
  */
 
-?>
+?>	
 
 				</div><!-- #content -->
+				<!-- </div> #row -->
 			</div><!-- #col-md-10 -->
 		</div><!-- #row -->
 	</div><!-- #container -->

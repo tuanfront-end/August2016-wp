@@ -1,9 +1,15 @@
-body{background-color: #f7f9fc}
-.site-wrap{display: flex;justify-content: center;}
-.site-content{
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+body{
+	word-wrap: break-word;
+	background-color: #f7f9fc;
 }
-#content{background-color: #ffffff;} 
+.site-wrap{
+	>.col-md-10{
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+#content{} 
 .site-header{
 	padding: 70px 0;
 	&:before, &:after{

@@ -497,6 +497,12 @@ a:active {
   display: block;
   left: 100%;
 }
+.main-navigation ul ul a {
+  border: none;
+}
+.main-navigation ul ul :hover > a {
+  border-bottom: none;
+}
 .main-navigation ul li:hover > ul {
   display: block;
   left: auto;
@@ -506,9 +512,13 @@ a:active {
   float: left;
   position: relative;
 }
+.main-navigation li a {
+  border-bottom: 3px solid transparent;
+}
 .main-navigation li:hover > a {
   text-decoration: none;
   color: purple;
+  border-bottom: 3px solid #5c6bc0;
 }
 .main-navigation a {
   color: #333333;
@@ -9857,25 +9867,12 @@ button.close {
 15.0 My style
 --------------------------------------------------------------*/
 body {
+  word-wrap: break-word;
   background-color: #f7f9fc;
 }
-.site-wrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.site-content {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-#content {
-  background-color: #ffffff;
+.site-wrap > .col-md-10 {
+  margin: 0 auto;
+  float: none;
 }
 .site-header {
   padding: 70px 0;
@@ -9926,4 +9923,51 @@ body {
   background-color: #fff;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   left: 0;
+}
+/*--------------------------------------------------------------
+16.0 My style
+--------------------------------------------------------------*/
+#content article {
+  position: relative;
+  padding-bottom: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+}
+#content article .entry-wrap {
+  padding: 50px 98px 0px 98px;
+}
+#content article .entry-wrap .post-tag {
+  position: relative;
+  left: 102%;
+  background: #5c6bc0;
+  padding: 10px 12px;
+  max-width: 103px;
+  text-align: center;
+  color: #fff;
+}
+.entry-wrap {
+  float: none;
+  margin: 0 auto;
+}
+.entry-header {
+  font-family: 'lato-bold';
+}
+.entry-header h2 {
+  font-size: 40px;
+}
+.entry-header h2 a {
+  color: #333333;
+}
+.entry-header .posted-on a {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+.entry-header .posted-on a:hover {
+  text-decoration: none;
+}
+.entry-content {
+  font-family: 'lato-regular';
+}
+iframe {
+  width: 100%;
 }
