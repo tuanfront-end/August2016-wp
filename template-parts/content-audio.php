@@ -10,12 +10,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+		<div class="post-top eden_audio">
+			<?php 
+				$tp_country = get_post_meta( $post->ID, 'eden_audio', true );
+				if( $tp_country ) { // kiểm tra xem nó có dữ liệu hay không
+	                echo $tp_country;
+	            }
+			 ?>
+		</div>
 		<div class="entry-wrap">
 
 			<header class="entry-header">
-				<div class="post-tag">
-					<span>I Do Travel</span>
+				<div class="post-tag ">
+					<span>I Do Listen</span>
 				</div>
 				<?php 
 				if ( 'post' === get_post_type() ) : ?>

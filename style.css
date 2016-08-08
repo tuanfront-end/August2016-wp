@@ -779,6 +779,13 @@ a:active {
   display: block;
 }
 /*--------------------------------------------------------------
+10.4 video-tag
+--------------------------------------------------------------*/
+.eden-video-tag iframe {
+  width: 100%;
+  height: 500px;
+}
+/*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -9967,6 +9974,20 @@ body {
 }
 .entry-content {
   font-family: 'lato-regular';
+}
+/*--------------------------------------------------------------
+17.0 My style
+--------------------------------------------------------------*/
+.entry-footer {
+  text-align: right;
+}
+.entry-footer .cat-links {
+  font-family: 'lato-regular';
+  color: #cacaca;
+}
+.entry-footer .cat-links a {
+  color: #cacaca;
+  font-size: 15px;
 }
 iframe {
   width: 100%;

@@ -10,7 +10,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+		<div class="post-top">
+			<?php 
+				$tp_country = get_post_meta( $post->ID, 'eden_video', true );
+				if( $tp_country ) { // kiểm tra xem nó có dữ liệu hay không
+	                echo $tp_country;
+	            }
+				// check if the post has a Post Thumbnail assigned to it.
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+				}
+			
+			 ?>
+		</div>
 		<div class="entry-wrap">
 
 			<header class="entry-header">
