@@ -125,6 +125,15 @@ function eden_widgets_init() {
 }
 add_action( 'widgets_init', 'eden_widgets_init' );
 
+
+//Insert FlexSlider 2 plugin
+function slider() {
+        wp_enqueue_script( 'slider', get_stylesheet_directory_uri() . '/slider/owl.carousel.js', array('jquery') );
+        wp_enqueue_script( 'slider-option', get_stylesheet_directory_uri() . '/slider/slider-option.js', array('jquery') );
+        wp_enqueue_style( 'slider-css', get_stylesheet_directory_uri() . '/slider/owl.theme.css');
+        wp_enqueue_style( 'slider-css2', get_stylesheet_directory_uri() . '/slider/owl.carousel.css');
+}
+add_action( 'wp_enqueue_scripts', 'slider' );
 /**
  * Enqueue scripts and styles.
  */
@@ -141,6 +150,7 @@ function eden_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'eden_scripts' );
+
 
 /**
  *  eden_searchform()   : : Form Search

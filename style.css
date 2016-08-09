@@ -10261,6 +10261,11 @@ footer.site-footer {
 .footer-wrap .social-menu-area {
   padding-top: 36px;
 }
-iframe {
-  width: 100%;
+#owl-demo {
+  width: 945px ;
+  margin: 0 auto;
+  float: none;
+}
+#gallery-2 {
+  display: none;
 }
