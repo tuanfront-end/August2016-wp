@@ -39,13 +39,36 @@ body{
 	float: left;
 	position: relative;
 	i{font-size: 17px;color: #333333;}
-	.search-form{
-		position: absolute;
-		display: none;
-		border-radius: 5px;
-	    padding: 15px;
-	    background-color: #fff;
-	    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	    left: 0;
+	.my-searchform{
+
+		a{float: right;}
+	    form.search-form{
+			label{margin-bottom: 0}
+		    margin-left: 10px;
+		    float: left;
+		    .search-submit{display: none}
+		    .search-field{
+		    	width: 200px;
+		    	background-color: #F7F9FC;
+			    border: none;
+			    border-radius: 0;
+			    border-bottom: 1px solid;
+			    padding: 0;
+			    display: none;
+			    position: relative;
+			    // &:after{
+			    // 	content: '';
+			    // 	position: absolute;
+			    // 	left: 0;right: 0;bottom: 0; top: 90%;
+			    // 	border-bottom: 2px solid;
+			    // 	background-color: red;
+			    // }
+			    &:focus{
+			    	outline: -webkit-focus-ring-color auto 0px;
+			    	border-bottom: 1px solid rgb(62, 74, 146);
+			    }
+		    }
+		    
+	    }
 	}
 }

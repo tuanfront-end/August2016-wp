@@ -22,18 +22,7 @@
 				<div class="col-md-10 footer-wrap">
 					<div class="site-info text-center">
 						
-						<?php
-					      global $tp_options;
-					    ?>
-					 
-					    <?php if ( $tp_options['logo-on'] == 1 ) : ?>
-					  
-				        <div class="logo">
-				          <a href=" <?php echo get_stylesheet_directory_uri(); ?> "><img src="<?php echo $tp_options['logo-image']['url']; ?>"></a>
-				        </div>
-
-						<?php endif; ?>
-						
+					      <?php footer_logo(); ?>
 						<br>
 						<div class="footer-menu-area">
 							<nav id="site-navigation" class="footer-navigation" role="navigation">
@@ -42,20 +31,22 @@
 								<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 							</nav><!-- #site-navigation -->
 							<div class="head-searchform">
-								<?php  eden_searchform(); ?>
+								<?php  
+									//footer_search();
+								?>
 							</div>
 						</div>
 						<br>
 				     	<hr>
 						<br>
 						<span>
-				          	<?php echo $tp_options['copyright-text-1']; ?>
+				          	<?php footer_text_1(); ?>
 				        </span>
 				        <br>
 						<hr>
 						<br>
 						<span>
-				          	<?php echo $tp_options['copyright-text-2']; ?>
+				          	<?php footer_text_2(); ?>
 				        </span>
 						<br>
 				        <div class="social-menu-area">

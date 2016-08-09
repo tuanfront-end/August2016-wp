@@ -55,7 +55,7 @@
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 						</nav><!-- #site-navigation -->
 						<div class="head-searchform">
-							<?php  eden_searchform(); ?>
+							<?php header_search(); ?>
 						</div>
 					</div>
 					

@@ -203,6 +203,43 @@
 						)
 					);
 					//end section
+					// Footer-Search-Box
+				    $this->sections[] = array(
+				        'title'  => __( 'Header Search-box', 'eden' ),
+				        'desc'   => __( 'All of settings for header-search box on this theme.', 'eden' ),
+				        'icon'   => 'el-icon-search',
+				        'fields' => array(
+									    // Mỗi array là một field
+									    array(
+									        'id'       => 'header-search-on',
+									        'type'     => 'switch',
+									        'title'    => __( 'Enable Header Search box', 'eden' ),
+									        'compiler' => 'bool', // Trả về giá trị kiểu true/false (boolean)
+									        'desc'     => __( 'Do you want to enable search box?', 'eden' ),
+									        'on' => __( 'Enabled', 'eden' ),
+									        'off' => __('Disabled')
+									    )
+									)
+				    ); // end section
+
+				    // Header-Search-Box
+				    $this->sections[] = array(
+				        'title'  => __( 'Footer Search-box', 'eden' ),
+				        'desc'   => __( 'All of settings for footer-search box on this theme.', 'eden' ),
+				        'icon'   => 'el-icon-search',
+				        'fields' => array(
+									    // Mỗi array là một field
+									    array(
+									        'id'       => 'footer-search-on',
+									        'type'     => 'switch',
+									        'title'    => __( 'Enable Footer Search box', 'eden' ),
+									        'compiler' => 'bool', // Trả về giá trị kiểu true/false (boolean)
+									        'desc'     => __( 'Do you want to enable search box?', 'eden' ),
+									        'on' => __( 'Enabled', 'eden' ),
+									        'off' => __('Disabled')
+									    )
+									)
+				    ); // end section
 				}
 
   			}

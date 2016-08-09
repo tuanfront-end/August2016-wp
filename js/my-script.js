@@ -1,6 +1,11 @@
 jQuery(document).ready(function($) {
-	// Header Search Icon CLick.
+
 	$('.my-searchform .icon-search-click').click(function(){
-		$('.my-searchform .search-form').toggle();
+
+			$('.my-searchform .search-field').animate({
+				width: 'toggle'
+				
+			});
 	});
+
 });

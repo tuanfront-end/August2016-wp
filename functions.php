@@ -157,7 +157,7 @@ add_action( 'wp_enqueue_scripts', 'eden_scripts' );
  */
 function eden_searchform(){ ?>
 	<div class="my-searchform">
-		<a href="#" class="icon-search-click"><i class="fa fa-search" aria-hidden="true"></i></a>
+		<a href="#" class="icon-search-click "><i class="fa fa-search" aria-hidden="true"></i></a>
 		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' );?>">
 		    <label>
 		        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
@@ -166,6 +166,7 @@ function eden_searchform(){ ?>
 		            value="<?php echo get_search_query() ?>" name="s"
 		            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
 		    </label>
+		    
 		    <input type="submit" class="search-submit"
 		        value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
 		</form>
@@ -196,6 +197,39 @@ function the_posts_navigation2( $args = array() ) {
 	
 	    return $navigation;
 	
+}
+
+function header_search(){
+	 global $tp_options;
+	 if ($tp_options['header-search-on'] == 1) {
+	 	return eden_searchform();
+	 } 
+}
+function footer_search(){
+	 global $tp_options;
+	 if ($tp_options['footer-search-on'] == 1) {
+	 	return eden_searchform();
+	 } 
+}
+
+function footer_logo(){
+	global $tp_options;
+					    		 
+	    if ( $tp_options['logo-on'] == 1 ) : ?>
+	  
+        <div class="logo">
+          <a href=" <?php echo get_stylesheet_directory_uri(); ?> "><img src="<?php echo $tp_options['logo-image']['url']; ?>"></a>
+        </div>
+
+		<?php endif; 
+}
+function footer_text_1(){
+	global $tp_options;
+	echo $tp_options['copyright-text-1'];
+}
+function footer_text_2(){
+	global $tp_options;
+	echo $tp_options['copyright-text-2'];
 }
 /**
  * Implement the Custom Header feature.

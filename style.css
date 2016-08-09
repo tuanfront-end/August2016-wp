@@ -10096,14 +10096,32 @@ body {
   font-size: 17px;
   color: #333333;
 }
-.head-searchform .search-form {
-  position: absolute;
+.head-searchform .my-searchform a {
+  float: right;
+}
+.head-searchform .my-searchform form.search-form {
+  margin-left: 10px;
+  float: left;
+}
+.head-searchform .my-searchform form.search-form label {
+  margin-bottom: 0;
+}
+.head-searchform .my-searchform form.search-form .search-submit {
   display: none;
-  border-radius: 5px;
-  padding: 15px;
-  background-color: #fff;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  left: 0;
+}
+.head-searchform .my-searchform form.search-form .search-field {
+  width: 200px;
+  background-color: #F7F9FC;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+  padding: 0;
+  display: none;
+  position: relative;
+}
+.head-searchform .my-searchform form.search-form .search-field:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+  border-bottom: 1px solid #3e4a92;
 }
 /*--------------------------------------------------------------
 16.0 My style
@@ -10260,6 +10278,9 @@ footer.site-footer {
 }
 .footer-wrap .social-menu-area {
   padding-top: 36px;
+}
+.footer-wrap .head-searchform i {
+  color: #fff;
 }
 #owl-demo {
   width: 945px ;
