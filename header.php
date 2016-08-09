@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="site container-fluid">
+<div id="page" class="site container-fluidd">
 	<div class="container">
 		<div class="row site-wrap">
 			<div class="col-md-10 col-sm-12 col-xs-12 ">
@@ -32,7 +32,7 @@
 						if ( is_front_page() && is_home() ) : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
 						endif;
 

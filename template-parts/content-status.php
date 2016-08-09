@@ -9,20 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('video'); ?>>
-		<div class="post-top eden-video-tag">
-			<?php 
-				$tp_country = get_post_meta( $post->ID, 'eden_tag_post', true );
-				if( $tp_country ) { // kiểm tra xem nó có dữ liệu hay không
-	                echo $tp_country;
-	            }
-			 ?>
-		</div>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 		<div class="entry-wrap">
 
 			<header class="entry-header">
 				<div class="post-tag">
-					<span>I Do Whatch</span>
+					<span>I Do Reflect</span>
 				</div>
 				<?php 
 				if ( 'post' === get_post_type() ) : ?>
@@ -31,24 +24,35 @@
 				</div><!-- .entry-meta -->
 				<?php
 				endif; ?>
-
+ 
 				<?php
 				if ( is_single() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
 				else :
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif;
-				?> 
-				<footer class="entry-footer">
-					<?php eden_entry_footer(); ?>
-				</footer><!-- .entry-footer -->
+				?>
+				<hr>
 
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
-
 				<?php
-					// the content here
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'read more', 'eden' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
+					?>
+					
+					<footer class="entry-footer">
+						<?php eden_entry_footer(); ?>
+					</footer><!-- .entry-footer -->
+					<?php
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'eden' ),
+						'after'  => '</div>',
+					) );
 				?>
 			</div><!-- .entry-content -->
 

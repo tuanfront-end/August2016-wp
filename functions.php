@@ -60,6 +60,14 @@ function eden_setup() {
 		'primary' => esc_html__( 'Primary', 'eden' ),
 	) );
 
+	register_nav_menus( array(
+		'footer' => esc_html__( 'Footer', 'eden' ),
+	) );
+
+	register_nav_menus( array(
+		'social' => esc_html__( 'Social', 'eden' ),
+	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -94,11 +102,11 @@ function eden_content_width() {
 add_action( 'after_setup_theme', 'eden_content_width', 0 );
 
  // Replaces the excerpt "Read More" text by a link
-function new_excerpt_more($more) {
+function eden_excerpt_more($more) {
        global $post;
-	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
+	return '<br><br><a class="moretag" href="'. get_permalink($post->ID) . '"> Read more</a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'eden_excerpt_more');
 /**
  * Register widget area.
  *
@@ -154,7 +162,31 @@ function eden_searchform(){ ?>
 	</div>
 <?php
 }
+function the_posts_navigation2( $args = array() ) {
+     $navigation = '';
+    if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
+      	 $args = wp_parse_args( $args, array(
+      	 	'mid_size'           => 1,
+            'prev_text'          => _x( 'Previous', 'previous post',false ),
+            'next_text'          => _x( 'Next', 'next post' ,false),
+            'screen_reader_text' => __( 'Posts navigation' ),
+	    ) );
+      	  // Make sure we get a string back. Plain is the next best thing.
+        if ( isset( $args['type'] ) && 'array' == $args['type'] ) {
+                $args['type'] = 'plain';
+        }
 
+        // Set up paginated links.
+        $links = paginate_links( $args );
+
+   		if ( $links ) {
+                $navigation = _navigation_markup( $links, 'pagination', $args['screen_reader_text'] );
+        }
+	}
+	
+	    return $navigation;
+	
+}
 /**
  * Implement the Custom Header feature.
  */
@@ -179,3 +211,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Require theme option in Core folder.
+ */
+require get_template_directory() . '/core/init.php';

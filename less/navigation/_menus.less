@@ -73,9 +73,96 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
+		opacity: 0.5;
 	}
 }
 
+
+.footer-menu-area{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+.footer-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	//width: 100%;
+	font-family: 'lato-bold'; 
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			display: none;
+			z-index: 99999;
+			background-color: #f7f9fc;
+			ul {
+				display: none;
+				top: 0;
+			}
+
+			li {
+				border-bottom: 1px solid #bdb8b8;
+				padding: 15px;
+				width: 150px;
+				&:hover > ul {
+					display: block;
+					left: 100%;
+				}
+			}
+
+			a {
+				border : none;
+			}
+
+			:hover > a {
+				border-bottom : none;
+			}
+
+			a:hover {
+			}
+		}
+		li{	
+
+			&:hover>ul{
+				display: block;
+				left: auto;
+			}
+		}
+	}
+	li {
+		a{border-bottom : 3px solid transparent; }
+		padding: 0 15px;
+		float: left;
+		position: relative;
+		&:hover > a {
+			text-decoration: none;
+			color: purple;
+			border-bottom : 3px solid #5c6bc0;
+		}
+	}
+	a {
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+		opacity: 0.5;
+	}
+}
 /* Small menu */
 .menu-toggle {
 	display: none;
@@ -112,4 +199,87 @@
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+#menu-social li{
+	float: left;
+	list-style: none;
+	color: #fff;
+
+}
+#menu-social li a{
+   display: inline-block;
+   color: #fff;
+   margin-right: 20px;
+   &:hover{
+   	text-decoration: none;
+   }
+}
+
+#menu-social li a[href*="facebook.com"],
+#menu-social li a[href*="youtube.com"],
+#menu-social li a[href*="twitter.com"],
+#menu-social li a[href*="skype.com"],
+#menu-social li a[href*="vine.com"]
+{
+	display: inline-block;
+   font: normal normal normal 14px/1 FontAwesome;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-size: inherit;
+   vertical-align: -15%;
+	font-size: 0px;
+}
+
+
+#menu-social li a[href*="facebook.com"]:before{ 
+	content:"\f230";
+	font-size: 30px;
+}
+#menu-social li a[href*="facebook.com"]:hover:before{
+	color: #3B5998;
+}
+
+
+#menu-social li a[href*="twitter.com"]:before{ 
+	content: "\f099";
+	font-size: 30px;
+}
+#menu-social li a[href*="twitter.com"]:hover:before{
+	color: #52A5E9;
+}
+
+
+#menu-social li a[href*="youtube.com"]:before{ 
+	content: "\f167";
+	font-size: 30px;
+}
+#menu-social li a[href*="youtube.com"]:hover:before{
+	color: #EE1C1B;
+}
+
+
+
+#menu-social li a[href*="skype.com"]:before{ 
+	content: "\f17e";
+	font-size: 30px;
+}
+#menu-social li a[href*="skype.com"]:hover:before{
+	color: #00AFF0;
+}
+
+
+#menu-social li a[href*="vine.com"]:before{ 
+	content: "\f1ca";
+	font-size: 30px;
+}
+#menu-social li a[href*="vine.com"]:hover:before{
+	color: #00A478;
+}
+
+.menu-social-container{
+	display: flex;
+	align-items:center;
+	justify-content: center;
 }
