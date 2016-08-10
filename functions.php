@@ -130,6 +130,12 @@ add_action( 'widgets_init', 'eden_widgets_init' );
 function slider() {
         wp_enqueue_script( 'slider', get_stylesheet_directory_uri() . '/slider/owl.carousel.js', array('jquery') );
         wp_enqueue_script( 'slider-option', get_stylesheet_directory_uri() . '/slider/slider-option.js', array('jquery') );
+
+        // Material Design JS
+        wp_enqueue_script( 'material-option', get_stylesheet_directory_uri() . '/js/materialize.js', array('jquery') );
+        wp_enqueue_style( 'material-css', get_stylesheet_directory_uri() . '/less/materialize.css');
+
+
         wp_enqueue_style( 'slider-css', get_stylesheet_directory_uri() . '/slider/owl.theme.css');
         wp_enqueue_style( 'slider-css2', get_stylesheet_directory_uri() . '/slider/owl.carousel.css');
 }
@@ -157,7 +163,7 @@ add_action( 'wp_enqueue_scripts', 'eden_scripts' );
  */
 function eden_searchform(){ ?>
 	<div class="my-searchform">
-		<a href="#" class="icon-search-click "><i class="fa fa-search" aria-hidden="true"></i></a>
+		<span class="icon-search-click "><i class="fa fa-search" aria-hidden="true"></i></span>
 		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' );?>">
 		    <label>
 		        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
@@ -173,6 +179,27 @@ function eden_searchform(){ ?>
 	</div>
 <?php
 }
+
+function eden_searchform_footer(){ ?>
+	<div class="my-searchform-footer">
+		<span class="icon-search-click "><i class="fa fa-search" aria-hidden="true"></i></span>
+		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' );?>">
+		    <label>
+		        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+		        <input type="search" class="search-field"
+		            placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+		            value="<?php echo get_search_query() ?>" name="s"
+		            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+		    </label>
+		    
+		    <input type="submit" class="search-submit"
+		        value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+		</form>
+	</div>
+<?php
+}
+
+
 function the_posts_navigation2( $args = array() ) {
      $navigation = '';
     if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
@@ -208,7 +235,7 @@ function header_search(){
 function footer_search(){
 	 global $tp_options;
 	 if ($tp_options['footer-search-on'] == 1) {
-	 	return eden_searchform();
+	 	return eden_searchform_footer();
 	 } 
 }
 

@@ -10,25 +10,30 @@
 ?>
 	
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
 		<?php
+		/* Get Id img in Gallery in to make SliderShow */
 		$gallery = get_post_gallery( $post, false );
 		if( isset($gallery)  && !empty($gallery) ):
 			$ids = explode( ",", $gallery['ids'] );
-			echo '<div class="post-top">';
-			echo '<div id="owl-demo" class="owl-carousel owl-theme">';
+			echo '<div class="carousel">';
+			//echo '<div id="owl-demo" class="owl-carousel owl-theme">';
 			foreach( $ids as $id ) { 
 				$link = wp_get_attachment_url( $id );
 				?>
-				<div class="item">
+				 <a class="carousel-item" href="#">
 					<img src="<?php echo esc_url( $link); ?>" alt="">
-				</div>
+				</a>
 			<?php
 			}
-			echo '</div>';
+			//echo '</div>';
 			echo '</div>';
 		endif;
+		/* End Get Id img in Gallery in to make SliderShow */
 		?>
+	
+
+
 
 		<div class="entry-wrap">
 

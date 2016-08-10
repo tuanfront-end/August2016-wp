@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
 		<div class="post-top eden_audio">
 			<?php 
 				$tp_country = get_post_meta( $post->ID, 'eden_tag_post', true );

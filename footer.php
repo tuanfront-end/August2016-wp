@@ -25,14 +25,14 @@
 					      <?php footer_logo(); ?>
 						<br>
 						<div class="footer-menu-area">
-							<nav id="site-navigation" class="footer-navigation" role="navigation">
+							<div id="site-navigation" class="footer-navigation" role="navigation">
 								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Footer Menu', 'eden' ); ?>
 								</button>
 								<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
-							</nav><!-- #site-navigation -->
+							</div><!-- #site-navigation -->
 							<div class="head-searchform">
 								<?php  
-									//footer_search();
+									footer_search();
 								?>
 							</div>
 						</div>
@@ -50,11 +50,11 @@
 				        </span>
 						<br>
 				        <div class="social-menu-area">
-							<nav id="social-navigation" class="social-navigation" role="navigation">
+							<div id="social-navigation" class="social-navigation" role="navigation">
 								<button class="menu-toggle" aria-controls="social-menu" aria-expanded="false"><?php esc_html_e( 'Social Menu', 'eden' ); ?>
 								</button>
 								<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'menu-social' ) ); ?>
-							</nav><!-- #site-navigation -->
+							</div><!-- #site-navigation -->
 						</div>
 					</div><!-- .site-info -->
 				</div>
@@ -64,6 +64,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 
 </body>
 </html>

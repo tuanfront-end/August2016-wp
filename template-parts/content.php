@@ -9,9 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-		<div class="entry-wrap">
+<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
+	
+		<div class="entry-wrap "> 
 
 			<header class="entry-header">
 				<div class="post-tag">
@@ -37,6 +37,7 @@
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
+				
 				<?php
 					the_content( sprintf(
 						/* translators: %s: Name of current post. */
@@ -50,12 +51,11 @@
 					</footer><!-- .entry-footer -->
 				<?php
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'eden' ),
-						'after'  => '</div>',
+						'before' => '<div class="page-links">' . esc_html__( 'Page :', 'eden' ),
+						'after'  => '</div>'
 					) );
 				?>
 			</div><!-- .entry-content -->
-
-			
-		</div>		
+		</div>
+		
 </article><!-- #post-## -->

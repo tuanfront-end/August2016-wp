@@ -17,7 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+  <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluidd">
@@ -49,11 +49,11 @@
 					</div><!-- .site-branding -->
 
 					<div class="header-right-area">
-						<nav id="site-navigation" class="main-navigation" role="navigation">
+						<div id="site-navigation" class="main-navigation" role="navigation">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'eden' ); ?>
 							</button>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-						</nav><!-- #site-navigation -->
+						</div><!-- #site-navigation -->
 						<div class="head-searchform">
 							<?php header_search(); ?>
 						</div>

@@ -9,7 +9,7 @@
 
 ?>
 
-<article  id="post-<?php the_ID(); ?>" <?php post_class('quote'); ?>  >
+<article  id="post-<?php the_ID(); ?>" <?php post_class('quote card'); ?>  >
 		<div class="post-top">
 			<?php 
 				

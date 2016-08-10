@@ -960,6 +960,13 @@ a:active {
   height: 500px;
 }
 /*--------------------------------------------------------------
+10.5 video-tag
+--------------------------------------------------------------*/
+.page-links {
+  text-align: center;
+  margin: 0 auto;
+}
+/*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -10051,6 +10058,22 @@ body {
   word-wrap: break-word;
   background-color: #f7f9fc;
 }
+.row {
+  content: '';
+  display: block !important;
+}
+#page {
+  position: relative;
+}
+#page:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 50%;
+  top: 0;
+  height: 4px;
+  background-color: #5c6bc0;
+}
 .site-wrap > .col-md-10 {
   margin: 0 auto;
   float: none;
@@ -10110,6 +10133,11 @@ body {
   display: none;
 }
 .head-searchform .my-searchform form.search-form .search-field {
+  height: inherit;
+  margin-bottom: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
   width: 200px;
   background-color: #F7F9FC;
   border: none;
@@ -10121,7 +10149,39 @@ body {
 }
 .head-searchform .my-searchform form.search-form .search-field:focus {
   outline: -webkit-focus-ring-color auto 0px;
-  border-bottom: 1px solid #3e4a92;
+  border-bottom: 1px solid rgba(15, 142, 17, 0.59);
+}
+.head-searchform .my-searchform-footer a {
+  float: right;
+}
+.head-searchform .my-searchform-footer form.search-form {
+  margin-left: 10px;
+  float: left;
+}
+.head-searchform .my-searchform-footer form.search-form label {
+  margin-bottom: 0;
+}
+.head-searchform .my-searchform-footer form.search-form .search-submit {
+  display: none;
+}
+.head-searchform .my-searchform-footer form.search-form .search-field {
+  height: inherit;
+  margin-bottom: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  width: 200px;
+  background-color: #5C6BC0;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+  padding: 0;
+  display: none;
+  position: relative;
+}
+.head-searchform .my-searchform-footer form.search-form .search-field:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+  border-bottom: 1px solid rgba(15, 142, 17, 0.59);
 }
 /*--------------------------------------------------------------
 16.0 My style
@@ -10130,7 +10190,6 @@ body {
   margin-top: 50px;
   position: relative;
   padding-bottom: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #ffffff;
 }
 #content article .entry-wrap {
@@ -10145,6 +10204,10 @@ body {
   text-align: center;
   color: #fff;
   font-family: 'lato-bold';
+}
+#content .page-num nav.navigation.pagination {
+  background: none;
+  box-shadow: none;
 }
 .entry-wrap {
   float: none;
@@ -10237,6 +10300,15 @@ nav.navigation.pagination .nav-links a:hover {
 nav.navigation.pagination .nav-links a.next,
 nav.navigation.pagination .nav-links a.prev {
   display: none;
+}
+/* OverRite for Material Carousel  */
+.carousel .carousel-item {
+  width: 700px;
+  height: 500px;
+  margin-top: 150px;
+}
+.carousel {
+  height: 400px;
 }
 /*--------------------------------------------------------------
 17.0 My style
