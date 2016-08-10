@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
-	
 		<div class="entry-wrap "> 
 
 			<header class="entry-header">

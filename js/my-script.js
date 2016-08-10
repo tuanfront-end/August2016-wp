@@ -29,4 +29,17 @@ jQuery(document).ready(function($) {
 	// Set to nth slide
 	$('.carousel').carousel('set', 4);
 
+
+	/* Js for Contact form 7 - Plachollder */
+	$('.contact-form .yoursubject').attr("placeholder", "Subject");
+	$('.contact-form .yourname').attr("placeholder", "Your Name");
+	$('.contact-form .youremail').attr("placeholder", "Email");
+	$('.contact-form .yourmes').attr("placeholder", "Your Message");
+
+
+	$('.main-navigation .menu-toggle').click(function(){
+		$('.main-navigation ul').slideToggle();
+	});
+
+	
 });

@@ -26,8 +26,7 @@
 						<br>
 						<div class="footer-menu-area">
 							<div id="site-navigation" class="footer-navigation" role="navigation">
-								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Footer Menu', 'eden' ); ?>
-								</button>
+								
 								<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 							</div><!-- #site-navigation -->
 							<div class="head-searchform">
@@ -51,8 +50,7 @@
 						<br>
 				        <div class="social-menu-area">
 							<div id="social-navigation" class="social-navigation" role="navigation">
-								<button class="menu-toggle" aria-controls="social-menu" aria-expanded="false"><?php esc_html_e( 'Social Menu', 'eden' ); ?>
-								</button>
+						
 								<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'menu-social' ) ); ?>
 							</div><!-- #site-navigation -->
 						</div>

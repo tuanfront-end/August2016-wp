@@ -190,6 +190,10 @@ a:active {
 a img {
   border: 0;
 }
+input,
+textarea {
+  font-size: 14px !important;
+}
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
@@ -468,18 +472,18 @@ a:active {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.main-navigation {
+.header-navigation {
   clear: both;
   display: block;
   float: left;
   font-family: 'lato-bold';
 }
-.main-navigation ul {
+.header-navigation ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-.main-navigation ul ul {
+.header-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
@@ -488,52 +492,52 @@ a:active {
   z-index: 99999;
   background-color: #f7f9fc;
 }
-.main-navigation ul ul ul {
+.header-navigation ul ul ul {
   display: none;
   top: 0;
 }
-.main-navigation ul ul li {
+.header-navigation ul ul li {
   border-bottom: 1px solid #bdb8b8;
   padding: 15px;
   width: 150px;
 }
-.main-navigation ul ul li:hover > ul {
+.header-navigation ul ul li:hover > ul {
   display: block;
   left: 100%;
 }
-.main-navigation ul ul a {
+.header-navigation ul ul a {
   border: none;
 }
-.main-navigation ul ul :hover > a {
+.header-navigation ul ul :hover > a {
   border-bottom: none;
 }
-.main-navigation ul li:hover > ul {
+.header-navigation ul li:hover > ul {
   display: block;
   left: auto;
 }
-.main-navigation li {
+.header-navigation li {
   padding: 0 15px;
   float: left;
   position: relative;
 }
-.main-navigation li a {
+.header-navigation li a {
   border-bottom: 3px solid transparent;
 }
-.main-navigation li:hover > a {
+.header-navigation li:hover > a {
   text-decoration: none;
   color: purple;
   border-bottom: 3px solid #5c6bc0;
 }
-.main-navigation a {
+.header-navigation a {
   color: #333333;
   text-transform: uppercase;
   font-size: 16px;
   display: block;
   text-decoration: none;
 }
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.header-navigation .current_page_item > a,
+.header-navigation .current-menu-item > a,
+.header-navigation .current_page_ancestor > a {
   opacity: 0.5;
 }
 .footer-menu-area {
@@ -630,9 +634,89 @@ a:active {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
+    margin: 0 auto;
   }
   .main-navigation ul {
     display: none;
+  }
+  .main-navigation ul li {
+    border-bottom: 1px solid red;
+    float: none;
+    padding-top: 20px;
+  }
+  .main-navigation ul li ul {
+    display: none;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .main-navigation ul li ul li {
+    border: none;
+  }
+  .main-navigation ul li ul li a {
+    border-bottom: 1px solid #BD9F9F;
+  }
+  .main-navigation ul li ul li :hover a {
+    color: purple;
+  }
+  .header-navigation li > a {
+    border: none;
+  }
+  .header-navigation li:hover > a {
+    border: none;
+    color: purple;
+  }
+  .site-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .site-header .header-right-area {
+    margin-top: 20px;
+  }
+  .site-header .header-right-area {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 90px;
+  }
+  .head-searchform {
+    margin-top: 20px;
+  }
+  .head-searchform .my-searchform form.search-form .search-field {
+    display: block !important;
+  }
+  .footer-menu-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 .site-main .comment-navigation,
@@ -979,6 +1063,61 @@ a:active {
   opacity: 0.5;
   color: #000;
   font-size: 25px;
+}
+/*--------------------------------------------------------------
+10.7 Search Page
+--------------------------------------------------------------*/
+.archive-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-family: 'lato-bold';
+  font-size: 17px;
+  color: #333333;
+}
+.archive-content h1 {
+  font-size: 30px;
+  opacity: 0.3;
+  color: #000;
+  font-family: 'lato-bold';
+  margin: 50px 0 20px  0;
+}
+.archive-content .archive-left {
+  width: 45%;
+}
+.archive-content .archive-right {
+  width: 50%;
+}
+.archive-content ul {
+  margin-left: 0;
+}
+.archive-content li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.archive-content li a {
+  color: #333333;
+  font-size: 17px;
+}
+.archive-content li a:hover {
+  text-decoration: none;
+  color: purple;
+}
+@media (max-width: 600px) {
+  .carousel {
+    height: 250px !important;
+  }
+  .carousel .carousel-item {
+    width: 300px !important;
+    margin-top: 0 !important;
+  }
 }
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -10118,6 +10257,7 @@ body {
 }
 .site-header .site-branding h1 {
   font-family: 'lato-bolditalic';
+  margin: 0;
 }
 .site-header .site-branding h1 a {
   color: #333333;
@@ -10326,6 +10466,56 @@ nav.navigation.pagination .nav-links a.prev {
 }
 .carousel {
   height: 400px;
+}
+.contact-form .inf {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.contact-form .inf span {
+  width: 360px;
+}
+.contact-form .inf span input {
+  background: #f7f9fc;
+  height: 50px;
+  border-radius: 0;
+}
+.contact-form .yoursubject {
+  background: #f7f9fc;
+  height: 50px;
+  border-radius: 0;
+  width: 100%;
+}
+.contact-form .yourmes {
+  background: #f7f9fc;
+  height: 140px;
+  border-radius: 0;
+  width: 100%;
+}
+.contact-form input[type="submit"] {
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 25px;
+  padding: 0;
+  margin-top: 40px;
+  text-transform: uppercase;
+  color: #5c6bc0;
+}
+@media (max-width: 1024px) {
+  #content article .entry-wrap {
+    padding: 20px 10px;
+  }
+  #content article .entry-wrap .post-tag {
+    position: static;
+  }
 }
 /*--------------------------------------------------------------
 17.0 My style

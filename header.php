@@ -23,7 +23,7 @@
 <div id="page" class="site container-fluidd">
 	<div class="container">
 		<div class="row site-wrap">
-			<div class="col-md-10 col-sm-12 col-xs-12 ">
+			<div class="col-md-10 col-sm-12 col-xs-12">
 				<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'eden' ); ?></a>
 
 				<header id="masthead" class="site-header" role="banner">
@@ -34,22 +34,12 @@
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
-						endif;
-
-						/* --------description Site Here---------------- */
-
-						//$description = get_bloginfo( 'description', 'display' );
-						//if ( $description || is_customize_preview() ) : ?>
-							<!-- <p class="site-description"><?php// echo $description; /* WPCS: xss ok. */ ?></p> -->
-						<?php
-						//endif; ?>
-						<!-- /* End description Site Here */ -->
-
+						endif; ?>
 
 					</div><!-- .site-branding -->
 
 					<div class="header-right-area">
-						<div id="site-navigation" class="main-navigation" role="navigation">
+						<div id="site-navigation" class="main-navigation header-navigation" role="navigation">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'eden' ); ?>
 							</button>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

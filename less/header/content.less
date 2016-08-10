@@ -1,3 +1,4 @@
+
 #content{
 	.row{
 		// display: flex;
@@ -140,4 +141,54 @@ nav.navigation.pagination{
 }
 .carousel{
 	height: 400px;
+}
+
+
+.contact-form{
+	.inf {
+	    display: flex;
+	    justify-content: space-between;
+	    span{
+	    	width: 360px;
+	    	
+	    	input,{background: #f7f9fc;height: 50px;border-radius: 0}
+	    }
+	}
+	.yoursubject{
+		background: #f7f9fc;height: 50px;border-radius: 0;
+		width: 100%;
+	}
+	.yourmes{
+		background: #f7f9fc;height: 140px;border-radius: 0;
+		width: 100%;
+	}
+	input[type="submit"]{
+		background: none;
+	    border: none;
+	    box-shadow: none;
+	    font-size: 25px;
+	    padding: 0;
+	    margin-top: 40px;
+	    text-transform: uppercase;
+	    color: #5c6bc0;
+	}
+}
+
+
+@media  (max-width: 1024px) {
+    #content{
+    	article{
+	    	.entry-wrap{
+	    		padding: 20px 10px;
+	    		.post-tag{
+		    		position: static;
+		    	}
+	    	}
+
+	    }
+    }
+}
+
+@media  (max-width: 480px) {
+	
 }

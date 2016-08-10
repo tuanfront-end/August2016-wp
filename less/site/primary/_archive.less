@@ -1,0 +1,44 @@
+ .archive-content{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	font-family: 'lato-bold';
+ 	font-size: 17px;
+ 	color: #333333;
+ 	h1{
+ 		font-size: 30px;
+ 		opacity: 0.3;
+ 		color: #000;
+ 		font-family: 'lato-bold';
+ 		margin: 50px 0 20px  0;
+ 	}
+ 	.archive-left{
+ 		width: 45%;
+ 		
+ 	}
+ 	.archive-right{
+ 		width: 50%;
+ 		
+ 	}
+ 	ul{
+ 		margin-left: 0;
+ 	}
+ 	li{
+		list-style: none;
+		margin-bottom: 20px;
+		a{
+			color: #333333;
+			font-size: 17px;
+			&:hover{
+				text-decoration: none;
+				color: purple;
+			}
+		}
+	}
+ }
+@media (max-width: 600px) {
+	.carousel{height: 250px !important;}
+ 	.carousel .carousel-item{
+ 		width: 300px !important;
+ 		margin-top: 0 !important;
+ 	}
+ }
