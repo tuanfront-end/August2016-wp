@@ -26,8 +26,12 @@
 						<br>
 						<div class="footer-menu-area">
 							<div id="site-navigation" class="footer-navigation" role="navigation">
+								<?php 
+									if (has_nav_menu( 'footer' )) {
+										wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-social' ) );
+									}
+								 ?>
 								
-								<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 							</div><!-- #site-navigation -->
 							<div class="head-searchform">
 								<?php  
@@ -51,7 +55,12 @@
 				        <div class="social-menu-area">
 							<div id="social-navigation" class="social-navigation" role="navigation">
 						
-								<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'menu-social' ) ); ?>
+								<?php 
+									if (has_nav_menu( 'social' )) {
+										wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'menu-social' ) );
+									}
+									 
+								?>
 							</div><!-- #site-navigation -->
 						</div>
 					</div><!-- .site-info -->

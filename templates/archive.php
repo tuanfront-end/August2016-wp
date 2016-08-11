@@ -101,7 +101,7 @@ get_header(); ?>
 										    'meta_key' => '',
 										    'meta_value' =>'',
 										    'post_type' => 'post',
-										    'post_status' => 'draft, publish, future, pending, private',
+										    'post_status' => 'publish, future, pending, private',
 										    'suppress_filters' => true );
 
 										    $recent_posts = wp_get_recent_posts( $args, ARRAY_A );

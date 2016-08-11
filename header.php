@@ -19,6 +19,7 @@
 
   <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluidd">
 	<div class="container">
@@ -42,7 +43,12 @@
 						<div id="site-navigation" class="main-navigation header-navigation" role="navigation">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'eden' ); ?>
 							</button>
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+							<?php 
+							if (has_nav_menu( 'primary' )) {
+								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+							}
+							 
+							?>
 						</div><!-- #site-navigation -->
 						<div class="head-searchform">
 							<?php header_search(); ?>

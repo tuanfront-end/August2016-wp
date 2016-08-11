@@ -55,6 +55,8 @@
 					) );
 				?>
 			</div><!-- .entry-content -->
+
+			
 		</div>
 		
 </article><!-- #post-## -->
